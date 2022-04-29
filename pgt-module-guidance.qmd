@@ -1,0 +1,214 @@
+---
+title: "PALS PGT Statistics: Module guidance"
+format: html
+---
+
+There are three statistics modules offered by postgraduate programmes at UCL Psychology and Language Sciences (PALS), pitched at a fundamental, intermediate, and advanced level. Each programme includes a default module. Depending on your experience and ability, it may be possible to change to module pitched at a higher level than the default. Such a switch requires approval by the programme director. This document provides some guidance on whether such a switch is right for you.
+
+## A brief overview of the three modules
+
+### Fundamental module
+
+The fundamental module is suitable for students without prior statistics experience. It covers widely-used analyses, such as regression and analysis-of-variance (ANOVA) in an intuitive manner, focusing on conceptual understanding over technical details. Some experience in applying the analyses is provided in practical sessions, where students are guided on using modern statistical software with a point-and-click interface (JASP).
+
+### Intermediate module
+
+The intermediate module is suitable for students without prior statistics experience, or students with prior statistics experience who want or need to learn to use the R statistical programming language. It covers similar topics as the fundamental module (e.g. regression and ANOVA), with a stronger focus on the technical aspects of applying these techniques with `R`. `R` is a widely used programming language for data science.
+
+### Advanced module
+
+The advanced module is suitable for students with prior statistics experience, and focuses on more advanced techniques, such as linear-mixed effects models, Structural Equation Models (SEM), and Bayesian estimation and inference. Like the Intermediate module, it focuses on `R` in applying these techniques. Although prior experience with R is not required, unlike the Intermediate module, the Advanced module does not cover basic `R` in detail. Those without prior `R` experience may therefore have to put in additional effort to acquire basic R skills.
+
+## Which module is right for me?
+
+By answering the questions below, you will 
+
+1. How much statistics education have you had?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof experience = Inputs.radio(
+  [
+    "None",
+    "Some (e.g. a single undergraduate statistics module)",
+    "Extensive (e.g. multiple undergraduate statistics modules)"
+  ], 
+)
+```
+
+2. When did you last receive statistics training?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof when = Inputs.radio(
+  [
+    "Never",
+    "More than 10 years ago",
+    "Between 3 and 10 years ago",
+    "Between 3 and 1 years ago",
+    "Within the last year",
+  ], 
+)
+```
+3. Which analyses have you learned about?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof analyses = Inputs.checkbox(
+  [
+    "Analysis-of-variance (ANOVA)",
+    "Correlation",
+    "Factor analysis",
+    "Linear mixed-effects models",
+    "Logistic regression",
+    "Multiple regression",
+    "Multivariate analysis-of-variance (MANOVA)",
+    "Regression",
+    "Structural Equation Modeling (SEM)",
+    "t-test",
+  ], 
+)
+```
+4. Which analyses have you used in practice?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof practise = Inputs.checkbox(
+  [
+    "Analysis-of-variance (ANOVA)",
+    "Correlation",
+    "Factor analysis",
+    "Linear mixed-effects models",
+    "Logistic regression",
+    "Multiple regression",
+    "Multivariate analysis-of-variance (MANOVA)",
+    "Regression",
+    "Structural Equation Modeling (SEM)",
+    "t-test",
+  ], 
+)
+```
+5. Which statistical software have you used?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof software = Inputs.checkbox(
+  [
+    "JAMOVI",
+    "JASP",
+    "Matlab",
+    "Python",
+    "R",
+    "SAS",
+    "SPSS",
+    "STATA",
+  ], 
+)
+```
+6. If $Y = b \times X$, and $b=2$ and $X=3$, what is the value of $Y$?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof alg1 = Inputs.radio(
+  [
+    "1",
+    "3",
+    "6",
+    "9",
+    "10"
+  ], 
+)
+```
+7. If $Y = b \times X$, then $X$ equals 
+```{ojs}
+//| echo: false
+//| panel: input
+viewof alg2 = Inputs.radio(
+  [
+    "Y",
+    "b",
+    "Y/b",
+    "b/Y",
+    "b × Y"
+  ], 
+)
+```
+
+```{ojs}
+//| echo: false
+viewof submit = Inputs.button("Submit")
+```
+
+```{ojs}
+//| echo: false
+
+progress = {
+  submit;
+  const width = 360;
+  const height = 20;
+  const context = DOM.context2d(width, height);
+  context.canvas.style.border = "solid 1px black";
+  for (let i = width; i >= 0; --i) {
+    context.clearRect(0, 0, width, height);
+    context.fillRect(0, 0, i, height);
+    yield context.canvas;
+  }
+}
+```
+
+## Observable JS
+
+This Quarto document is made interactive using Observable JS. Interactive documents allow readers to modify parameters and see the results immediately. Learn more about OJS interactive documents at <https://quarto.org/docs/interactive/ojs/>.
+
+## Bubble Chart
+
+This example uses a D3 bubble chart imported from Observable HQ to analyse commits to GitHub repositories.
+
+Select a repository to analyse the commits of:
+
+```{ojs}
+//| echo: false
+//| panel: input
+viewof repo = Inputs.radio(
+  [
+    "pandas-dev/pandas",
+    "tidyverse/ggplot2",
+  ], 
+  { label: "Repository:", value: "pandas-dev/pandas"}
+)
+```
+
+
+Fetch the commits for the specified `repo` using the GitHub API:
+
+```{ojs}
+d3 = require('d3')
+contributors = await d3.json(
+  "https://api.github.com/repos/" + repo + "/stats/contributors"
+)
+commits = contributors.map(contributor => {
+  const author = contributor.author;
+  return {
+    name: author.login,
+    title: author.login,
+    group: author.type,
+    value: contributor.total
+  }
+})
+```
+
+Note that the `repo` variable is bound dynamically from the radio input defined above. If you change the input the contributors query will be automatically re-executed.
+
+View the commits sorted by most to least:
+
+```{ojs}
+Inputs.table(commits, { sort: "value", reverse: true })
+```
+
+Visualize using a D3 bubble chart imported from Observable HQ:
+
+```{ojs}
+import { chart } with { commits as data } 
+  from "@d3/d3-bubble-chart"
+chart
+```
