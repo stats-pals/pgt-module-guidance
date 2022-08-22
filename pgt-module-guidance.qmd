@@ -3,212 +3,339 @@ title: "PALS PGT Statistics: Module guidance"
 format: html
 ---
 
-There are three statistics modules offered by postgraduate programmes at UCL Psychology and Language Sciences (PALS), pitched at a fundamental, intermediate, and advanced level. Each programme includes a default module. Depending on your experience and ability, it may be possible to change to module pitched at a higher level than the default. Such a switch requires approval by the programme director. This document provides some guidance on whether such a switch is right for you.
+There are three statistics modules offered by postgraduate programmes at UCL Psychology and Language Sciences (PALS). These are pitched at a fundamental, intermediate, and advanced level. Each postgraduate programme suggests a default module. Depending on your experience and ability, it may be possible for you to switch to a module pitched at a *higher* level than this default. Such a switch can be requested by you or the programme director. It will always require approval by the programme director. The ultimate reason for switching is to enhance your learning opportunity and to acquire new transferable skills. The module you take will also be reflected on your degree transcript. As such, taking a more advanced module could be beneficial to later opportunities. But the main thing to consider is whether a module is right for you at the time you are undertaking your postgraduate degree. There are always opportunities for later learning. In all modules, we aim to provide the best learning experience for our students. In the end, there should be no penalty for choosing the module that is right for you.
+
+All three modules share the same basic philosophy, which is to provide statistical literacy as a transferable skill, using state-of-the-art and freely available open-source software. That means that you can apply your acquired knowledge anywhere, and and at all times.
+
+Here, we aim to provide guidance to which module is right for you at the moment. This guidance is automated, and depends on your answers to the questions below. This is not an exam, and your answers are not recorded. There are no right or wrong answers for the purpose of suggesting a module. As we don't record answers, in requesting a switch to a more advanced level module, it would be useful to print the page (to pdf) take a screenshot of your answers.
 
 ## A brief overview of the three modules
 
+The names of the modules reflect the approach taken and topics covered. There is no difference in the quality of the education they provide. Our aim is to provide the best education to all students, whilst at the same time matching it to your needs, interests, and abilities. All modules are supported by openly available materials.
+
 ### Fundamental module
 
-The fundamental module is suitable for students without prior statistics experience. It covers widely-used analyses, such as regression and analysis-of-variance (ANOVA) in an intuitive manner, focusing on conceptual understanding over technical details. Some experience in applying the analyses is provided in practical sessions, where students are guided on using modern statistical software with a point-and-click interface (JASP).
+The fundamental module is suitable for students without any prior statistics experience. It covers in an intuitive manner the most widely-used analyses in psychology and language sciences, such as linear regression and analysis-of-variance (ANOVA). The focus is on conceptual understanding and statistical literacy over technical details. Experience in applying the analyses is provided in practical sessions, where students are guided on using modern statistical software with a point-and-click interface (JAMOVI). JAMOVI is free and open-source statistical software, which like software such as SPSS, aims to make statistical analyses straightforward to apply for a general audience.
 
 ### Intermediate module
 
-The intermediate module is suitable for students without prior statistics experience, or students with prior statistics experience who want or need to learn to use the R statistical programming language. It covers similar topics as the fundamental module (e.g. regression and ANOVA), with a stronger focus on the technical aspects of applying these techniques with `R`. `R` is a widely used programming language for data science.
+The intermediate module is suitable for students without prior statistics experience, or students with some prior statistics experience who want or need to learn to use the `R` statistical programming language. The intermediate module covers similar topics as the fundamental module (e.g. regression and ANOVA), with a stronger focus on the technical aspects of applying these techniques with `R`. `R` is a widely used programming language for data science, and a sought-after skill in many professions with a data-analytic component. `R` is a programming environment that benefits from a large amount of add-on packages that enable a wealth of more advanced analyses. Using `R` effectively requires writing writing scripts, rather than selecting options in a menu as in point-and-click software such as JAMOVI. The Intermediate module provides a relatively gentle introduction to `R` programming, but because of the additional time spent on learning `R`, you will have to grasp statical concepts more quickly than in the Fundamental module. As such, the learning curve is steeper than in the Fundamental module. <!-- A main consideration for switching to the Intermediate module is whether you are willing to learn to program in `R`.-->
+
+The module's materials are available here: [https://singmann.github.io/stats_for_experiments/](https://singmann.github.io/stats_for_experiments/)
 
 ### Advanced module
 
-The advanced module is suitable for students with prior statistics experience, and focuses on more advanced techniques, such as linear-mixed effects models, Structural Equation Models (SEM), and Bayesian estimation and inference. Like the Intermediate module, it focuses on `R` in applying these techniques. Although prior experience with R is not required, unlike the Intermediate module, the Advanced module does not cover basic `R` in detail. Those without prior `R` experience may therefore have to put in additional effort to acquire basic R skills.
+The advanced module is suitable for students with prior statistics experience. It provides a unified framework of statistical inference as model comparison. It offers a refresher of the General Linear Model (GLM), the most widely-used model within this framework, before moving on to the more advanced techniques such as linear mixed-effects models, generalized linear models, structural equation models (SEM), and Bayesian estimation and inference. In comparison to the other levels, the pace is high and knowledge of basic algebra is assumed. Like the Intermediate module, it focuses on `R` to perform statistical analyses. Although prior experience with `R` is not required, unlike the Intermediate module, the Advanced module does not provide a "gentle" introduction to `R`. Those without prior `R` experience may therefore have to put in additional effort to acquire basic `R` skills.
+
+The module's materials are available here: [https://mspeekenbrink.github.io/sdam-book/](https://mspeekenbrink.github.io/sdam-book/) and [https://mspeekenbrink.github.io/sdam-r-companion/](https://mspeekenbrink.github.io/sdam-r-companion/)
 
 ## Which module is right for me?
 
-By answering the questions below, you will 
+By answering the questions below, we will provide you with automated guidance. This should not be taken as definite, as individual cases vary. The questions relate to four areas (interests, prior training, experience, and ability) and for each of these, your answers will be used to determine a level. 
 
-1. How much statistics education have you had?
+1. Which module are you most interested in taking?
 ```{ojs}
 //| echo: false
 //| panel: input
-viewof experience = Inputs.radio(
+viewof interest = Inputs.radio(new Map(
   [
-    "None",
-    "Some (e.g. a single undergraduate statistics module)",
-    "Extensive (e.g. multiple undergraduate statistics modules)"
-  ], 
-)
+    ["Fundamental module","fundamental"],
+    ["Intermediate module", "intermediate"],
+    ["Advanced module","advanced"]
+  ] 
+))
 ```
-
-2. When did you last receive statistics training?
+2. How would you rate your current statistical and numerical ability (on a scale between 0 = very poor, and 100 = very good)?
 ```{ojs}
 //| echo: false
 //| panel: input
-viewof when = Inputs.radio(
-  [
-    "Never",
-    "More than 10 years ago",
-    "Between 3 and 10 years ago",
-    "Between 3 and 1 years ago",
-    "Within the last year",
-  ], 
-)
-```
-3. Which analyses have you learned about?
-```{ojs}
-//| echo: false
-//| panel: input
-viewof analyses = Inputs.checkbox(
-  [
-    "Analysis-of-variance (ANOVA)",
-    "Correlation",
-    "Factor analysis",
-    "Linear mixed-effects models",
-    "Logistic regression",
-    "Multiple regression",
-    "Multivariate analysis-of-variance (MANOVA)",
-    "Regression",
-    "Structural Equation Modeling (SEM)",
-    "t-test",
-  ], 
-)
-```
-4. Which analyses have you used in practice?
-```{ojs}
-//| echo: false
-//| panel: input
-viewof practise = Inputs.checkbox(
-  [
-    "Analysis-of-variance (ANOVA)",
-    "Correlation",
-    "Factor analysis",
-    "Linear mixed-effects models",
-    "Logistic regression",
-    "Multiple regression",
-    "Multivariate analysis-of-variance (MANOVA)",
-    "Regression",
-    "Structural Equation Modeling (SEM)",
-    "t-test",
-  ], 
-)
-```
-5. Which statistical software have you used?
-```{ojs}
-//| echo: false
-//| panel: input
-viewof software = Inputs.checkbox(
-  [
-    "JAMOVI",
-    "JASP",
-    "Matlab",
-    "Python",
-    "R",
-    "SAS",
-    "SPSS",
-    "STATA",
-  ], 
-)
-```
-6. If $Y = b \times X$, and $b=2$ and $X=3$, what is the value of $Y$?
-```{ojs}
-//| echo: false
-//| panel: input
-viewof alg1 = Inputs.radio(
-  [
-    "1",
-    "3",
-    "6",
-    "9",
-    "10"
-  ], 
-)
-```
-7. If $Y = b \times X$, then $X$ equals 
-```{ojs}
-//| echo: false
-//| panel: input
-viewof alg2 = Inputs.radio(
-  [
-    "Y",
-    "b",
-    "Y/b",
-    "b/Y",
-    "b × Y"
-  ], 
-)
+viewof self_rating = Inputs.range([0,100], {step: 1}, {value: 0})
 ```
 
+3. How much prior statistics education have you had?
 ```{ojs}
 //| echo: false
-viewof submit = Inputs.button("Submit")
+//| panel: input
+viewof education = Inputs.radio(new Map(
+  [
+    ["None",0],
+    ["Some (e.g. a single undergraduate statistics module or online course)",1],
+    ["Medium (e.g. two undergraduare statistics modules or online courses)",2],
+    ["Extensive (e.g. more than 2 undergraduate statistics modules or online courses)",3]
+  ] 
+))
+```
+4. When did you last receive statistics training?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof education_when = Inputs.radio(new Map(
+  [
+    ["Never",0],
+    ["More than 10 years ago",1],
+    ["Between 3 and 10 years ago",2],
+    ["Between 3 and 1 years ago",3],
+    ["Within the last year",4]
+  ]
+))
+```
+5. Which analyses have you learned about?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof analyses_learned = Inputs.checkbox(new Map(
+  [
+    ["Analysis-of-variance (ANOVA)",2],
+    ["Correlation",1],
+    ["Factor analysis",3],
+    ["Linear mixed-effects models",3],
+    ["Logistic regression",2],
+    ["Multiple regression",2],
+    ["Multivariate analysis-of-variance (MANOVA)",3],
+    ["Bivariate or simple regression",1],
+    ["Structural Equation Modeling (SEM)",3],
+    ["t-test",1]
+  ]
+))
+```
+6. Which analyses have you used in practice?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof analyses_used = Inputs.checkbox(new Map(
+  [
+    ["Analysis-of-variance (ANOVA)",2],
+    ["Bivariate (or simple) regression",1],
+    ["Correlation",1],
+    ["Factor analysis",3],
+    ["Factorial analysis-of-variance (ANOVA)",2],
+    ["Linear mixed-effects models",3],
+    ["Logistic regression",2],
+    ["Multiple regression",2],
+    ["Multivariate analysis-of-variance (MANOVA)",3],
+    ["Repeated-measures ANOVA",3],
+    ["Structural Equation Modeling (SEM)",3],
+    ["t-test",1]
+  ]
+))
+```
+7. Which statistical software have you used?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof software_used = Inputs.checkbox(new Map(
+  [
+    ["JAMOVI","click"],
+    ["JASP","click"],
+    ["Matlab","language"],
+    ["Python","language"],
+    ["R","R"],
+    ["SAS","script"],
+    ["SPSS","click"],
+    ["STATA","script"],
+    ["other","other"]
+  ]
+))
+```
+8. If $Y = b \times X$, and $b=2$ and $X=3$, what is the value of $Y$?
+```{ojs}
+//| echo: false
+//| panel: input
+viewof algebra_1 = Inputs.radio(new Map(
+  [
+    ["1",0],
+    ["3",0],
+    ["4",0],
+    ["6",1],
+    ["9",0]
+  ]
+))
+```
+9. If $Y = a + b \times X$, then $X$ equals 
+```{ojs}
+//| echo: false
+//| panel: input
+viewof algebra_2 = Inputs.radio(new Map(
+  [
+    ["Y",0],
+    ["a/b",0],
+    ["(Y-a)/b",1],
+    ["a + b × Y",0],
+    ["b × Y",0]
+  ]
+))
 ```
 
+
 ```{ojs}
 //| echo: false
 
-progress = {
-  submit;
-  const width = 360;
-  const height = 20;
-  const context = DOM.context2d(width, height);
-  context.canvas.style.border = "solid 1px black";
-  for (let i = width; i >= 0; --i) {
-    context.clearRect(0, 0, width, height);
-    context.fillRect(0, 0, i, height);
-    yield context.canvas;
+// viewof submit = Inputs.button("Submit")
+
+function arraySum(arr) {
+  return arr.reduce((total, current) => {
+      return total + current;
+  }, 0);
+}
+  
+_interest = interest;
+
+_ability = {
+  if(algebra_1 === 1 && algebra_2 === 1 && self_rating >= 60)  {
+    yield {rating: 3, level: "advanced", explanation: ""};
+  } else if (self_rating >= 25) {
+    yield {rating: 2, level: "intermediate", "explanation": ""};
+  } else {
+    yield {rating: 1, level: "fundamental", "explanation": ""};
   }
 }
-```
 
-## Observable JS
+_analyses_learned = analyses_learned.reduce(function (
+    count,
+    currentValue
+) {
+    return (
+        count[currentValue] ? ++count[currentValue] : (count[currentValue] = 1),
+        count
+    );
+},
+{});
 
-This Quarto document is made interactive using Observable JS. Interactive documents allow readers to modify parameters and see the results immediately. Learn more about OJS interactive documents at <https://quarto.org/docs/interactive/ojs/>.
+_analyses_used = analyses_used.reduce(function (
+    count,
+    currentValue
+) {
+    return (
+        count[currentValue] ? ++count[currentValue] : (count[currentValue] = 1),
+        count
+    );
+},
+{});
 
-## Bubble Chart
+_software_used = software_used.reduce(function (
+    count,
+    currentValue
+) {
+    return (
+        count[currentValue] ? ++count[currentValue] : (count[currentValue] = 1),
+        count
+    );
+},
+{});
 
-This example uses a D3 bubble chart imported from Observable HQ to analyse commits to GitHub repositories.
+_education = {
+  // (education/3)*(education_when/4)
+  if (education >= 2 && education_when >= 2 && _analyses_learned["2"] >= 2) {
+    yield {rating: 3, level: "advanced", "explanation": "You have received recent prior statistics education, which covered at least some intermediate topics."};
+  } else if (education == 0 || education_when < 2) {
+    yield {rating: 1, level: "fundamental", explanation: "You have not received prior statistics education, or this was a long time ago"};
+  } else {
+    yield {rating: 2, level: "intermediate", explanation: "You have received some prior statistics education in the not too distant past."};
+  }  
+}
 
-Select a repository to analyse the commits of:
-
-```{ojs}
-//| echo: false
-//| panel: input
-viewof repo = Inputs.radio(
-  [
-    "pandas-dev/pandas",
-    "tidyverse/ggplot2",
-  ], 
-  { label: "Repository:", value: "pandas-dev/pandas"}
-)
-```
-
-
-Fetch the commits for the specified `repo` using the GitHub API:
-
-```{ojs}
-d3 = require('d3')
-contributors = await d3.json(
-  "https://api.github.com/repos/" + repo + "/stats/contributors"
-)
-commits = contributors.map(contributor => {
-  const author = contributor.author;
-  return {
-    name: author.login,
-    title: author.login,
-    group: author.type,
-    value: contributor.total
+_experience = {
+  let explnt = "";
+  if(_analyses_used["1"] >= 2 && _analyses_used["2"] >= 2) {
+    explnt += "You have experience with at least some intermediate analyses";
+    if(_analyses_used["3"] >= 1) {
+      explnt += " and advanced analyses";
+    }
+    if (_software_used["R"] === 1) {
+      explnt += ", as well as R.";
+    } else if (_software_used["language"] >= 1 || _software_used["script"] >= 1) {
+      explnt += ", as well as some programming languages or statistical scripting languages."
+    }
+    yield {rating: 3, level: "advanced", explanation: explnt};
+  } else if ((_analyses_used["1"] <= 2 && _analyses_used["2"] == 0 && _analyses_used["3"] == 0) || (_analyses_used["1"] === undefined && _analyses_used["2"] === undefined && _analyses_used["3"] === undefined)) {
+    explnt += "You have experience with at most some basic analyses.";
+    yield {rating: 1, level: "fundamental", explanation: explnt}
+  } else {
+    yield {rating: 2, level: "intermediate", explanation: "You have some experience in applying statistical analyses."};
   }
-})
+}
+
+mytab = {
+  if (interest === null || education === null || education_when === null || algebra_1 === null || algebra_2 === null) {
+  yield []
+} else {
+  yield [
+    {area: "interests", value: _interest, reason: ""},
+    {area: "training", value: _education.level, reason: _education.explanation},
+    {area: "experience", value: _experience.level, reason: _experience.explanation},
+    {area: "ability", value: _ability.level, reason: _ability.explanation}
+  ]
+  }
+}
+
+html`<h2>Guidance</h2>`
+
+viewof table = Inputs.table(mytab)
+
+
+// chart = vl.markBar() // Make a bar chart 
+//   .data([{name: "interests", value: _interest},
+//          {name: "ability", value: _ability},
+//          {name: "training", value: _education},
+//          {name: "experience", value: _experience}])
+//   .encode(
+//     vl.y().fieldO("name"),        // Show letters in sequential order on the x-axis
+//     vl.x().fieldQ("value"), //.axis({ format: "%" }), // Show frequency on the y-axis, formatted as percent
+//     // vl.color().value(yourColor)   // Set the bar color
+//   )
+//   .render()
+
+advice = {
+  // submit;
+  let advice_string = "";
+  if(interest === null || education === null || education_when === null || algebra_1 === null || algebra_2 === null) {
+    advice_string += "Please answer all questions.";
+  } else {
+    if (interest === "advanced") {
+      advice_string += "You indicate you are interested in taking the Advanced module. "
+    // check prior education 
+      if(_education.level === "advanced" && _ability.level === "advanced" && _experience.level === "advanced") {
+      // perfect score
+        advice_string += "Based on your stated prior education and experience with statistical analyses, as well as your (subjective) algebraic and statistical ability, we believe this is likely the right choice for you. As such, the advice is to take the Advanced module."
+      } else if (_education.rating === 2 && _ability.rating === 3 && _experience.rating === 3) {
+        advice_string += "Whilst your stated prior education is more suitable for the Intermediate module, your stated experience with statistical analyses and your (subjective) algebraic and statistical ability indicate you may be ready to take the Advanced module. As such, the advice is to consider taking the Advanced module, although the Intermediate module might be more suitable to you."
+      } else if (_education.rating === 3 && _ability.rating === 3 && _experience.rating === 2) {
+        advice_string += "You seem to have experience mostly with the more basic statisical analyses. However, your stated prior education and (subjective) algebraic and statistical ability indicate you may be ready to take the Advanced module. As such, the advice is to consider taking the Advanced module, although the Intermediate module might be more suitable to you."
+      } else if (_education.rating === 3 && _experience.rating === 3) {
+        advice_string += "However, your (subjective) algebraic and statistical ability indicates you may not be suitable for the Advanced module. Nevertheless, your stated prior education and experience with statistical analyses indicate you could be ready to take the Advanced module. Our advice is to take the Intermediate module, although you could consider taking the Advanced module if you are willing to put in additional effort to improve you algebraic and basic statistical ability."
+      } else if (_education.rating === 2) {
+        advice_string += "However, your (subjective) algebraic and statistical ability indicates the Advanced module may not be suitable to you. Nevertheless, your stated prior education and experience with statistical analyses indicate you could be ready to take the Advanced module. Our advice is to take the Intermediate module, although you could consider taking the Advanced module if you are willing to put in additional effort to improve you algebraic and basic statistical ability."
+      } else if (_ability.rating >= 2) {
+        advice_string += "However, your answers indicate that this is likely not the best choice for you. As such, our recommendation is to take the Intermediate module." 
+      } else {
+        advice_string += "However, your answers indicate that this is likely not the best choice for you. As such, our recommendation is to take the Intermediate, or even the Fundamental module, if this is allowed by your programme." 
+      }
+    } else if (_interest === "intermediate") {
+    advice_string += "You indicate you are interested in taking the Intermediate module. "
+    if(_education.rating == 3 && _ability.rating == 3 && _experience.rating === 3) {
+      advice_string += "Your stated prior education and experience with statistical analyses, as well as your (subjective) algebraic and statistical ability, indicate that the Advanced module may also be the right choice for you. Our advise is therefore to take the Intermediate module, although you may consider the Advanced module. "
+      } else if (_education.rating >= 1 && _ability.rating >= 2 && _experience.rating >= 1) {
+      // perfect score
+        advice_string += "Based on your stated prior education and experience with statistical analyses, as well as your (subjective) algebraic and statistical ability, we believe this is likely the right choice for you. As such, the advice is to take the Intermediate module."
+      } else {
+        advice_string += "However, your (subjective) statistical and numerical ability indicates that you may struggle with some of the aspects of this module. As such, you may also consider to take the Fundamental module, if this is allowed by your programme. You can also take the Intermediate module, but you should realise that learning to program in R may require additional effort."
+      }
+    } else if (_interest === "fundamental") {
+      advice_string += "You indicate you are interested in taking the Fundamental module."
+      if(_education.rating == 3 && _ability.rating == 3 && _experience.rating === 3) {
+        advice_string += " Your stated prior education and experience with statistical analyses, as well as your (subjective) algebraic and statistical ability, indicate that the Advanced module may also be the right choice for you. Our advise is therefore to take the Fundamental module, although you may consider the Advanced module. "
+      }
+      if(education > 1 && education_when > 1) {
+        advice_string += " As you indicate relevant and (at least somewhat) recent prior statistics education, you could also consider taking the Intermediate module."
+      } else {
+        advice_string += "If this is the default module in your programme, we recommend you stick to the Fundamental module."
+      }
+    }
+  }
+  yield advice_string;
+}
+html`<p></p><p>${advice}</p>`
+
 ```
 
-Note that the `repo` variable is bound dynamically from the radio input defined above. If you change the input the contributors query will be automatically re-executed.
 
-View the commits sorted by most to least:
-
-```{ojs}
-Inputs.table(commits, { sort: "value", reverse: true })
-```
-
-Visualize using a D3 bubble chart imported from Observable HQ:
-
-```{ojs}
-import { chart } with { commits as data } 
-  from "@d3/d3-bubble-chart"
-chart
-```
