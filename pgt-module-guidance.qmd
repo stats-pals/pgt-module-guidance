@@ -33,7 +33,7 @@ The module's materials are available here: [https://singmann.github.io/stats_for
 
 The advanced module is suitable for students with prior statistics experience. It provides a unified framework of statistical inference as model comparison. It offers a refresher of the General Linear Model (GLM), the most widely-used model within this framework, before moving on to the more advanced techniques such as linear mixed-effects models, generalized linear models, structural equation models (SEM), and Bayesian estimation and inference. In comparison to the other levels, the pace is high and knowledge of basic algebra is assumed. Like the Intermediate module, it focuses on `R` to perform statistical analyses. Although prior experience with `R` is not required, unlike the Intermediate module, the Advanced module does not provide a "gentle" introduction to `R`. Those without prior `R` experience may therefore have to put in additional effort to acquire basic `R` skills.
 
-The module's materials are available here: [https://mspeekenbrink.github.io/sdam-book/](https://mspeekenbrink.github.io/sdam-book/) and [https://mspeekenbrink.github.io/sdam-r-companion/](https://mspeekenbrink.github.io/sdam-r-companion/)
+The module's materials are available here: [https://mspeekenbrink.github.io/sdam-book/](https://mspeekenbrink.github.io/sdam-book/) and [https://mspeekenbrink.github.io/sdam-r-companion/](https://mspeekenbrink.github.io/sdam-r-companion/) Note that that some topics (e.g. generalized linear models and SEM) are still in development and will be added soon.
 
 ## Which module is right for me?
 
