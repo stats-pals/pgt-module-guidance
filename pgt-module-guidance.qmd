@@ -3,11 +3,15 @@ title: "PALS PGT Statistics: Module guidance"
 format: html
 ---
 
-There are three statistics modules offered by postgraduate programmes at UCL Psychology and Language Sciences (PALS). These are pitched at a fundamental, intermediate, and advanced level. Each postgraduate programme suggests a default module. Depending on your experience and ability, it may be possible for you to switch to a module pitched at a *higher* level than this default. Such a switch can be requested by you or the programme director. It will always require approval by the programme director. The ultimate reason for switching is to enhance your learning opportunity and to acquire new transferable skills. The module you take will also be reflected on your degree transcript. As such, taking a more advanced module could be beneficial to later opportunities. But the main thing to consider is whether a module is right for you at the time you are undertaking your postgraduate degree. There are always opportunities for later learning. In all modules, we aim to provide the best learning experience for our students. In the end, there should be no penalty for choosing the module that is right for you.
+There are three statistics modules offered by postgraduate programmes at UCL Psychology and Language Sciences (PALS). These are pitched at a fundamental, intermediate, and advanced level. Each postgraduate programme suggests a default module. 
+
+Depending on your experience and ability, it may be possible for you to switch to a module pitched at a *higher* level than the default for your program. Such a switch can be requested by you or the programme director. It will always require approval by the programme director. The ultimate reason for switching is to enhance your learning opportunity and to acquire new transferable skills. The module you take will also be reflected on your degree transcript. As such, taking a more advanced module could be beneficial to later opportunities. 
+
+The main thing to consider is whether a module is right for you at the time you are undertaking your postgraduate degree. There are always opportunities for later learning. In all modules, we aim to provide the best learning experience for our students. In the end, there should be no penalty for choosing the module that is right for you.
 
 All three modules share the same basic philosophy, which is to provide statistical literacy as a transferable skill, using state-of-the-art and freely available open-source software. That means that you can apply your acquired knowledge anywhere, and and at all times.
 
-Here, we aim to provide guidance to which module is right for you at the moment. This guidance is automated, and depends on your answers to the questions below. This is not an exam, and your answers are not recorded. There are no right or wrong answers for the purpose of suggesting a module. As we don't record answers, in requesting a switch to a more advanced level module, it would be useful to print the page (to pdf) take a screenshot of your answers.
+Here, we aim to provide guidance to which module is right for you at the moment. This guidance is automated, and depends on your answers to the questions below. This is not an exam, and your answers are not recorded. There are no right or wrong answers for the purpose of suggesting a module. As we don't record answers, in requesting a switch to a more advanced level module, it would be useful to print the page (to pdf) or take a screenshot of your answers.
 
 ## A brief overview of the three modules
 
