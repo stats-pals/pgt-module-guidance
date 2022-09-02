@@ -66,7 +66,7 @@ viewof education = Inputs.radio(new Map(
   [
     ["None",0],
     ["Some (e.g. a single undergraduate statistics module or online course)",1],
-    ["Medium (e.g. two undergraduare statistics modules or online courses)",2],
+    ["Medium (e.g. two undergraduate statistics modules or online courses)",2],
     ["Extensive (e.g. more than 2 undergraduate statistics modules or online courses)",3]
   ] 
 ))
